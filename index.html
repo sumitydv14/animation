@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <title>animation</title>
+    <style>
+         .main-section{
+             position: relative;
+             width: 480px;
+             height:270px;
+             overflow: hidden;
+             margin:0 auto;
+         }
+         .main-section *{
+             position: absolute;
+         }
+         .bg1{
+             background: url('images/1.jpg');
+             background-repeat: no-repeat;
+             background-size: cover;
+             width: 480px;
+             height: 270px;
+             transform: scale(1.5) translateX(-50px);
+         }
+         .text{
+             font-size: 48px;
+             font-weight: 600;
+             text-align: center;
+             left: 50%;
+             top:50%;
+             transform: translate( -50% ,-50% );
+             color:#FFF;
+             z-index: 1;
+             opacity: 0;
+         }
+
+         .text-bg {
+        background: #000;
+        width: 260px;
+        height: 70px;
+        top: 38%;
+        z-index: 0;
+        left: 22%;
+        opacity: 0;
+      }
+
+            .bg2{
+                background-image: url('images/2.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 480px;
+                height: 270px;
+                transform: scale(1.5);
+            }
+
+            .top-line {
+    width: 100px;
+    height: 6px;
+    background-color: #FFF;
+    top: 20%;
+    left: 6%;
+    opacity: 0;
+    }
+.left-line {
+    width: 6px;
+    height: 100px;
+    background-color: #FFF;
+    top: 20%;
+    left: 6%;
+    opacity: 0;
+}
+.text-1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #FFF;
+    top: 100px;
+    left: 80px;
+    opacity: 0;
+}
+
+.right-line {
+    width: 6px;
+    height: 100px;
+    background: #fff;
+    right: 38px;
+    bottom: 30px;
+    opacity: 0;
+}
+
+.bottom-line {
+    width: 100px;
+    height: 6px;
+    background: #fff;
+    bottom: 24px;
+    right: 38px;
+    opacity: 0;
+}
+
+.text-2 {
+    font-size: 32px;
+    color: #fff;
+    right: 60px;
+    bottom: 60px;
+    opacity: 0;
+}
+
+.bg3{
+    background: url('images/3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 480px;
+    height: 270px;
+    transform: scale(1.5) translateX(-50px);
+  
+}
+
+.top1 {
+    top: 50px;
+    background: #fff;
+    width: 78%;
+    height: 6px;
+    left: 50px;
+    opacity: 0;
+}
+
+.left1 {
+    width: 6px;
+    height: 70%;
+    background: #fff;
+    left: 44px;
+    top: 50px;
+    opacity: 0;
+}
+
+.right1 {
+    background: #fff;
+    width: 6px;
+    height: 70%;
+    right: 50px;
+    top: 50px;
+    opacity: 0;
+}
+
+.bottom1 {
+    background: #fff;
+    width: 78%;
+    height: 6px;
+    bottom: 31px;
+    left: 50px;
+    opacity: 0;
+}
+
+.text-3 {
+    font-size: 32px;
+    color: #fff;
+    top: 124px;
+    left: 143px;
+    opacity: 0;
+}
+
+    </style>
+</head>
+<body>
+      <section class="main-section">
+          <div class="bg1"></div>
+          <div class="text">Hello Gsap</div>
+          <div class="text-bg"></div>
+
+          <div class="bg2"></div>
+             <div class="top-line"></div>
+             <div class="left-line"></div>
+              <div class="text-1">Sun</div>
+              <div class="right-line"></div>
+              <div class="bottom-line"></div>
+              <div class="text-2">light</div>
+
+              <div class="bg3"></div>
+              <div class="top1"></div>
+              <div class="bottom1"></div>
+              <div class="left1"></div>
+              <div class="right1"></div>
+              <div class="text-3">End Animation</div>
+              
+      </section>
+
+      <script>
+     
+    var gsap = new TimelineMax();
+
+     gsap.fromTo('.bg1', 4, {scale: 1.5, x: -50}, {scale: 1.5, x :0}, 'same+=0.5');
+     gsap.fromTo('.text', 1.9, {x: -500, autoAlpha: 0}, {x: 0, autoAlpha: 1}, 'same+=0.8');
+     gsap.fromTo('.text-bg', 2.5, {x:-500, autoAlpha: 0} , {x:0, autoAlpha: 1}, 'same+=2');
+     gsap.fromTo('.text-bg',2.5, {y:0, autoAlpha:1},{y:-300 , autoAlpha:0}, 'same+=6');
+     gsap.fromTo('.text',2.5, {y:0, autoAlpha:1},{y:-300 , autoAlpha:0}, 'same+=6');
+
+
+
+     gsap.fromTo('.bg2',3,{autoAlpha:0},{autoAlpha:1},'same+=6.1');
+     gsap.fromTo('.bg2',3,{scale:1.5, x: -50}, {scale:1.5, x:0 },'same+=8');
+     gsap.fromTo('.top-line',4,{y:-200 , autoAlpha:0},{y:0, autoAlpha:1},'same+=8.5');
+     gsap.fromTo('.left-line',4,{x:-200, autoAlpha:0},{x:0,autoAlpha:1},'same+=8.5');
+     gsap.fromTo('.text-1',4,{x:-200, autoAlpha:0},{x:0,autoAlpha:1},'same+=13'); 
+     gsap.fromTo('.right-line',4,{x:300, autoAlpha:0},{x:0, autoAlpha:1},'same+=16');
+     gsap.fromTo('.bottom-line',4,{y:300, autoAlpha:0},{y:0, autoAlpha:1}, 'same+=16');
+     gsap.fromTo('.text-2', 4, {autoAlpha:0},{autoAlpha:1},'same+=16.6');
+     gsap.fromTo('.top-line , .left-line , .text-1 , .right-line , .bottom-line , .text-2', 4, {scale:1},{scale:0.8 , autoAlpha:0}, 'same+=21');
+
+
+     gsap.fromTo('.bg3',4,{autoAlpha:0},{autoAlpha:1},'same+=24');
+     gsap.fromTo('.bg3', 4, {scale: 1.5, x: -50}, {scale: 1.5, x :0}, 'same+=24.5');
+     gsap.fromTo('.top1', 0.5,{  autoAlpha:0},{ autoAlpha:1},'same+=25');
+     gsap.fromTo('.bottom1', 0.5,{  autoAlpha:0},{ autoAlpha:1},'same+=25');
+     gsap.fromTo('.left1', 0.5,{  autoAlpha:0},{ autoAlpha:1},'same+=25');
+     gsap.fromTo('.right1', 0.5,{  autoAlpha:0},{ autoAlpha:1},'same+=25');
+     gsap.fromTo('.text-3', 4,{ y:-300, autoAlpha:0},{ y:0, autoAlpha:1},'same+=28');
+     gsap.fromTo('.text-3 , .right1 , .left1 , .bottom1 , .top1',4, {x:0 , autoAlpha:0},{x:-700 , autoAlpha:1},'same+=35');
+     
+
+    
+      
+
+
+      </script>
+
+
+</body>
+</html>
